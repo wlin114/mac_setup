@@ -1,6 +1,16 @@
 #/bin/bash bash
 
-sudo su
+#Maybe not always install as SU?
+#sudo su
+
+echo ****Installing xcode start****
+xcode-select --install
+
+echo ****Installing brew start****
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo ****Updating brew start****
+brew update
 
 which = $(which pip)
 echo ${which}
@@ -14,3 +24,8 @@ echo ****install awscli start****
 sudo -H  pip install awscli --upgrade --ignore-installed six
 echo ****install awscli finish****
 
+echo ****ability to view unknown file format on mac previrew****
+echo ****See https://github.com/whomwah/qlstephen****
+brew cask install qlstephen
+#Support bigger file size. default is 100k
+defaults write com.whomwah.quicklookstephen maxFileSize 1024000
