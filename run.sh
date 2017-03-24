@@ -11,6 +11,11 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 echo ****Updating brew start****
 brew update
+echo ****Install openssl****
+brew install openssl
+brew link openssl --force
+echo ****Updating install java google-chrome vlc video player****
+brew cask install java google-chrome vlc
 
 which = $(which pip)
 echo ${which}
