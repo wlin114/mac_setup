@@ -1,8 +1,4 @@
 #/bin/bash bash
-
-#Maybe not always install as SU?
-#sudo su
-
 echo ****Installing xcode start****
 xcode-select --install
 
@@ -16,6 +12,13 @@ brew install openssl
 brew link openssl --force
 echo ****Updating install java google-chrome vlc video player****
 brew cask install java google-chrome vlc
+echo ****Install Sublime****
+brew cask install sublime-text
+echo ****Install Android Studio****
+brew cask install android-studio***
+echo ***Google Drive ****
+brew cask install google-drive:w
+
 
 which = $(which pip)
 echo ${which}
