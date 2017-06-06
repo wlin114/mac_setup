@@ -20,6 +20,11 @@ echo ***Google Drive ****
 brew cask install google-drive:w
 echo *** Install Virtual Box ****
 brew cask install virtualbox;
+echo ** Install Flux ****
+brew cask install flux
+echo *** Install 1Password ****
+brew cask install 1password
+
 
 
 which = $(which pip)
