@@ -18,6 +18,8 @@ echo ****Install Android Studio****
 brew cask install android-studio***
 echo ***Google Drive ****
 brew cask install google-drive:w
+echo *** Install Virtual Box ****
+brew cask install virtualbox;
 
 
 which = $(which pip)
