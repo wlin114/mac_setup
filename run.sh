@@ -24,7 +24,8 @@ echo ** Install Flux ****
 brew cask install flux
 echo *** Install 1Password ****
 brew cask install 1password
-
+echo *** Install Slack ****
+brew cask install slack
 
 
 which = $(which pip)
@@ -44,3 +45,22 @@ echo ****See https://github.com/whomwah/qlstephen****
 brew cask install qlstephen
 #Support bigger file size. default is 100k
 defaults write com.whomwah.quicklookstephen maxFileSize 1024000
+
+echo **** Disable sound on boot ****
+sudo nvram SystemAudioVolume=" "
+
+echo **** Disble time machine when new media inserted to the system ****
+sudo defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+echo **** Dixable bouncing on dock ****
+defaults write com.apple.dock no-bouncing -bool false
+killall Dock
+
+echo **** Show file extention ****
+defaults write -g AppleShowAllExtensions -bool true
+
+echo ****  Don't write DS_Store file on USB and network drive ****
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+
