@@ -17,7 +17,7 @@ brew cask install sublime-text
 echo ****Install Android Studio****
 brew cask install android-studio***
 echo ***Google Drive ****
-brew cask install google-drive:w
+brew cask install google-drive
 echo *** Install Virtual Box ****
 brew cask install virtualbox;
 echo ** Install Flux ****
@@ -59,7 +59,7 @@ killall Dock
 echo **** Show file extention ****
 defaults write -g AppleShowAllExtensions -bool true
 
-echo ****  Don't write DS_Store file on USB and network drive ****
+echo ****  Don\'t write DS_Store file on USB and network drive ****
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
