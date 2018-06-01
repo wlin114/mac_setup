@@ -52,7 +52,7 @@ sudo nvram SystemAudioVolume=" "
 echo **** Disble time machine when new media inserted to the system ****
 sudo defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
-echo **** Dixable bouncing on dock ****
+echo **** Disable bouncing on dock ****
 defaults write com.apple.dock no-bouncing -bool false
 killall Dock
 
