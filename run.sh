@@ -55,6 +55,12 @@ brew **** install ${brew[@]} ****
 brew cask install ${cask[@]}
 brew link openssl --force
 
+echo ****Install Oh My ZSH****
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+echo ****changing theme ****
+echo **** see https://github.com/agnoster/agnoster-zsh-theme****
+
 which = $(which pip)
 echo ${which}
 
