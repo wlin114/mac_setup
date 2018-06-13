@@ -110,6 +110,13 @@ echo ****  Don\'t write DS_Store file on USB and network drive ****
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
+echo ****faster cursor****
+defaults write NSGlobalDomain KeyRepeat -int 1
+
+echo ****Change screenshot location****
+defaults write com.apple.screencapture location ~/Desktop/screenshots
+killall SystemUIServer
+
 echo "Cleanup"
 brew cleanup
 brew cask cleanup
