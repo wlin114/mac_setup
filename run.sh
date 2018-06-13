@@ -60,6 +60,19 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 echo ****changing theme ****
 echo **** see https://github.com/agnoster/agnoster-zsh-theme****
+sed -i 's/ZSH_THEME="[a-zA-Z]*"/ZSH_THEME="agnoster"/g' zsh
+
+echo ****Install Font ****
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+
+
 
 which = $(which pip)
 echo ${which}
