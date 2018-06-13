@@ -7,6 +7,7 @@ brew=(
   gnu-sed --with-default-names
   openssl
   python
+  rvm
   vim --with-override-system-vi
   wget --with-iri
   cask
