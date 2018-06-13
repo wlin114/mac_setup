@@ -63,6 +63,7 @@ echo **** see https://github.com/agnoster/agnoster-zsh-theme****
 sed -i 's/ZSH_THEME="[a-zA-Z]*"/ZSH_THEME="agnoster"/g' zsh
 
 echo ****Install Font ****
+echo ***User Roboto Thin****
 # clone
 git clone https://github.com/powerline/fonts.git --depth=1
 # install
