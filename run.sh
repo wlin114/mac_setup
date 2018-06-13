@@ -50,12 +50,10 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 echo ****Updating brew start****
 brew update
 
-#echo **** install ${brew[@]} ****
-#brew **** install ${brew[@]} ****
+echo **** install ${brew[@]} ****
+brew **** install ${brew[@]} ****
 brew cask install ${cask[@]}
-#brew link openssl --force
-
-exit 1
+brew link openssl --force
 
 which = $(which pip)
 echo ${which}
@@ -64,6 +62,9 @@ echo ****update pip start****
 pip install --upgrade pip
 
 echo ****update pip finish****
+
+echo ****Install RVM****
+curl -sSL https://get.rvm.io | bash -s stable --ruby
 
 echo ****install awscli start****
 sudo -H  pip install awscli --upgrade --ignore-installed six
