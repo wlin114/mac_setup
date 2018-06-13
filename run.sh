@@ -5,9 +5,9 @@ brew=(
   awscli 
   cheat
   gnu-sed --with-default-names
+  gpg
   openssl
   python
-  rvm
   vim --with-override-system-vi
   wget --with-iri
   cask
