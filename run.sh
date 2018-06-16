@@ -31,6 +31,7 @@ cask=(
   sublime-text
   virtualbox
   vlc
+  shiftit
 )
 
 
