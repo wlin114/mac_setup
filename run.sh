@@ -124,3 +124,4 @@ brew cleanup
 brew cask cleanup
 
 #https://apple.stackexchange.com/questions/306867/can-defaults-write-command-line-configure-the-menu-bar-on-macos
+#hello
