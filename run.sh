@@ -106,7 +106,7 @@ defaults write com.apple.dock no-bouncing -bool false
 
 
 echo **** Show file extention ****
-defaults write -g AppleShowAllExtensions -bool true
+defaults write com.apple.finder AppleShowAllFiles TRUE; 
 
 echo ****  Don\'t write DS_Store file on USB and network drive ****
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
