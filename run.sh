@@ -103,7 +103,7 @@ sudo defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisk
 
 echo **** Disable bouncing on dock ****
 defaults write com.apple.dock no-bouncing -bool false
-killall Dock
+
 
 echo **** Show file extention ****
 defaults write -g AppleShowAllExtensions -bool true
@@ -118,11 +118,14 @@ defaults write NSGlobalDomain KeyRepeat -int 1
 echo ****Change screenshot location****
 defaults write com.apple.screencapture location ~/Desktop/screenshots
 defaults write com.apple.menuextra.battery ShowPercent YES
-killall SystemUIServer
+
 
 echo "Cleanup"
 brew cleanup
 brew cask cleanup
 
+killall SystemUIServer
+killall Dock
+killall Finder
 #https://apple.stackexchange.com/questions/306867/can-defaults-write-command-line-configure-the-menu-bar-on-macos
 #hello
