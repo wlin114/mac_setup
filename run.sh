@@ -11,6 +11,7 @@ brew=(
   vim --with-override-system-vi
   wget --with-iri
   cask
+  git-open
 )
 
 cask=(
