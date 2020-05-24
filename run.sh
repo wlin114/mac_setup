@@ -2,27 +2,25 @@
 
 ################CONFIGUTATION START########################
 brew=(
-  awscli 
+  awscli
   cheat
-  gnu-sed --with-default-names
+  gnu-sed
   gpg
   openssl
   python
-  vim --with-override-system-vi
-  wget --with-iri
+  vim
+  wget
+  node
+  swiftlint
+  cocoapods
   cask
-  git-open
 )
 
 cask=(
-  1password
-  alfred
-  flux
   google-chrome
   google-backup-and-sync  
   iterm2
   java
-  nordvpn
   qlcolorcode
   qlimagesize
   qlmarkdown
@@ -30,11 +28,13 @@ cask=(
   quicklook-json
   slack
   sublime-text
-  virtualbox
-  vlc
-  shiftit
 )
 
+extra_cask=(
+  postman
+  charles
+  neteasemusic
+)
 
 ################ CONFIGUTATION END ########################
 
@@ -47,15 +47,23 @@ else
   echo "Skipping xcode-select"
 fi
 echo ****Installing brew start****
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 echo ****Updating brew start****
 brew update
 
 echo **** install ${brew[@]} ****
-brew **** install ${brew[@]} ****
-brew cask install ${cask[@]}
-#brew link openssl --force
+for i in "${brew[@]}"; do
+  brew install $i
+done
+
+echo **** install ${cask[@]} ****
+for i in "${cask[@]}"; do
+  brew cask install $i
+done
+
+echo **** install iOS sim ****
+npm install -g ios-sim
 
 echo ****Install Oh My ZSH****
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -64,17 +72,19 @@ echo ****changing theme ****
 echo **** see https://github.com/agnoster/agnoster-zsh-theme****
 sed -i 's/ZSH_THEME="[a-zA-Z]*"/ZSH_THEME="agnoster"/g' zsh
 
+echo **** adding alias ****
+
+echo "alias git-log=\"git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'\"" >> ~/.zshrc
+echo "alias git-log-all=\"git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset) —all\'\"" >> ~/.zshrc
+echo "alias git-delete-merged=\"git fetch && git remote prune origin && git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d\"" >> ~/.zshrc
+source ~/.zshrc
+
 echo ****Install Font ****
-echo ***User Roboto Thin****
-# clone
 git clone https://github.com/powerline/fonts.git --depth=1
-# install
 cd fonts
 ./install.sh
-# clean-up a bit
 cd ..
 rm -rf fonts
-
 
 
 which = $(which pip)
@@ -122,7 +132,6 @@ defaults write com.apple.menuextra.battery ShowPercent YES
 
 echo "Cleanup"
 brew cleanup
-brew cask cleanup
 
 killall SystemUIServer
 killall Dock
